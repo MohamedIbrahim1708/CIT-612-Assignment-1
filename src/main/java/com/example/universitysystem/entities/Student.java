@@ -5,10 +5,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @RequiredArgsConstructor
 @AllArgsConstructor
@@ -18,8 +15,14 @@ import javax.persistence.Id;
 public class Student {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long studentId;
-    private Long studentName;
-
+    @Column(nullable = false)
+    private String studentName;
+    private String Address;
+    private String Phone;
+    @Column(nullable = false)
+    private String Username;
+    @Column(nullable = false)
+    private String Password;
+    private String Dept;
 }
